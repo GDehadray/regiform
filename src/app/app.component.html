@@ -1,0 +1,121 @@
+<!--
+  container - used to display the content at center of webpage (bootstrap)
+  
+  [formGroup] - is the directive used to assign the logical name to form
+
+  (ngSubmit) - is the directive used to submit the form to component
+-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 b"></div>
+  <div class="col-md-6 a">
+    <h2 class="form-group" align="center">Registration Form</h2>
+  
+  <form [formGroup]="employee" (ngSubmit)="register()">
+      <!--first name-->
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text"placeholder="First Name"class="form-control"name="fname"requiredformControlName="fname">
+      </div>
+
+      <!--required validation-->
+      <div *ngIf="employee.controls['fname'].hasError('required')"class="alert alert-danger">
+          **** can't left blank ****    
+      </div> 
+
+      <!--minlength validation-->
+      <div *ngIf="employee.controls['fname'].hasError('minlength')"class="alert alert-danger">
+          **** minimum 3 characters are required ****    
+      </div> 
+      <!--maxlength validation-->
+      <div *ngIf="employee.controls['fname'].hasError('maxlength')"class="alert alert-danger">
+          **** maximum 8 characters are allowed ****    
+      </div>
+
+      <!--last name-->
+      <div class="form-group">
+          <label>Last Name</label>
+          <input type="text"class="form-control"name="lname"placeholder="Last Name"formControlName="lname"required>
+      </div>
+
+      <!--required-->
+      <div *ngIf="employee.controls['lname'].hasError('required')"class="alert alert-danger">
+          **** can't left blank ****    
+      </div>
+
+      <!--email-->
+      <div class="form-group">
+          <label>Email</label>
+          <input type="email"name="email"class="form-control"placeholder="Email"formControlName="email"required>
+      </div>
+
+      <div *ngIf="employee.controls['email'].hasError('required')"class="alert alert-danger">
+          **** can't left blank ****    
+      </div>
+
+      <div *ngIf="employee.controls['email'].hasError('pattern')"class="alert alert-danger">
+          **** email not matched the required pattern ****    
+      </div>
+
+      <!--date of birth-->
+      <div class="form-group">
+          <label>DOB</label>
+          <input type="date"name="dob"class="form-control"placeholder="Date Of Birth"formControlName="dob">
+      </div>
+
+      <!-- gender -->
+      <div class="form-group">
+          <label>Gender</label>
+          <input type="radio"name="gender"value="male"class="form-control"formControlName="gender"><b>Male</b>
+          
+          <input type="radio"name="gender"value="female"class="form-control"formControlName="gender"><b>Female</b>
+      </div>
+           
+      <div class="form-group">
+        <label>Languages</label>
+        <select name="languages" 
+                class="form-control"
+                formControlName="languages">
+            <option value="English">English</option>
+            <option value="Marathi">Marathi</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Japanees">Japaness</option>
+            <option value="French">French</option>    
+        </select>
+    </div>
+
+      <!-- Country -->
+      <div class="form-group">
+          <label>Country</label>
+          <select name="country" 
+                  class="form-control"
+                  formControlName="country">
+              <option value="india">India</option>
+              <option value="usa">USA</option>
+              <option value="canda">Canada</option>
+              <option value="japan">Japan</option>
+              <option value="uk">London</option>    
+          </select>
+      </div>
+
+      <!-- submit button -->
+      <div class="form-group" align="center">
+          <input type="submit" class="btn btn-danger">
+      </div>
+
+      <h1>{{result | json}}</h1>
+  </form>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

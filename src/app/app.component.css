@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.a{
+    background-color:aqua;
+}
+.b{
+    background-image: url("../assets/ID8A2205.JPG");
+    background-repeat: no-repeat;
+    height: 600px;
+    widows: 50px;
+    margin-right:10px;
+}

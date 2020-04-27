@@ -1,0 +1,193 @@
+Forms
+-----
+    - Angular Supports the two types of forms.
+
+    1) Template Driven Forms
+
+    2) Model Driven Forms (Reactive Forms)
+
+    - Template Driven forms are not providing more facilities to handle form data to developers, like validations supports,....
+
+    - Template Driven forms are outdated forms, now a days no one using Template Driven Forms.
+
+    - Now a days all most all the developers using Reactive Forms (Model Driven Forms).
+
+    - Model Driven Forms provides the more facilities to developers to handle form data like forms validations,.....
+
+Registration Example
+--------------------
+1) create the database in mongodb
+
+start the server
+----------------
+> moongod
+
+connect to server
+-----------------
+> mongo
+
+show databases
+--------------
+> show dbs;
+
+create the database
+-------------------
+> use angular;
+
+create the collection
+---------------------
+> db.createColletion("employee");
+
+fetch the data from collection
+------------------------------
+db.employee.find();
+
+*********************************************
+host      :   localhost
+
+port      :   27017
+
+protocol  :   mongodb
+
+database  :   angular
+
+collection:   employee
+*******************************************
+
+step 2.
+    create the angular project
+
+    > ng new registrationEx
+
+step 3.
+    switch to angular project
+
+    > cd registrationEx
+
+step 4.
+    download the node modules
+
+    => express
+
+    => mongodb@2.2.32
+
+    => cors
+
+    => body-parser
+
+    - "express" module used to develop the rest apis
+
+    - "mongodb@2.2.32" module used to connect to mongodb database
+
+    - "cors" module used to enable the ports communication
+
+    - "body-parser" module used to read the client data (forms data) (extended parameters)
+
+we will download above modules by using "yarn" tool
+
+> yarn add express mongodb@2.2.32 cors body-parser --save
+
+
+step 5.
+    develop the rest api(POST) by using nodejs
+
+******************************************
+registrationEx
+            server
+                server.js
+*****************************************
+
+step 6.
+    start the node server
+
+    > cd registrationEx
+    > cd server
+    > node server
+
+step 7.
+    test the following rest api by using Postman
+
+    => http://localhost:8080/registration
+
+step 8.
+    download bootstrap
+
+    Terminal-2
+    ----------
+    > cd registrationEx
+    > yarn add bootstrap --save
+
+    angular.json
+    ------------
+    "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ]
+
+
+step 9.
+    create the form
+
+*****************************************
+app.component.ts
+app.component.html
+
+app.module.ts
+*****************************************
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
